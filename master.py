@@ -1,11 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import seaborn as sns
-from sklearn import preprocessing
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import train_test_split
+
 
 prison = pd.read_csv(r'E:/python internship/FINAL DATASET - Sheet2.csv')
 st.title('Women Centric Data Analysis')
