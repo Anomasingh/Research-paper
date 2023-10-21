@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 
-prison = pd.read_csv(r'E:/python internship/FINAL DATASET - Sheet2.csv')
+prison = pd.read_csv(r'FINAL DATASET - Sheet2.csv')
 st.title('Women Centric Data Analysis')
 st.dataframe(prison, height=200 , width=900)
 #st.table(prison.iloc[0:10])
