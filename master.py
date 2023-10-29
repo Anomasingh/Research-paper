@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 
-prison = pd.read_csv(r'E:/python internship/PRISON.csv', encoding='iso-8859-1')
+prison = pd.read_csv(r'/workspaces/Research-paper/PRISON.csv', encoding='iso-8859-1')
 st.title('Women Centric Data Analysis')
 st.write('Head of the Dataset:')
 st.dataframe(prison.head(), height=200 , width=900)
