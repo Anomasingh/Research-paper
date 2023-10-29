@@ -19,7 +19,7 @@ st.dataframe(prison.head(), height=200 , width=900)
 #st.metric('My metric',42,2)
 ##Converting non-numeric columns to numeric
 def convert_to_numeric(column_name):
-    return pd.to_numeric(prison[column_name], errors='coerce')
+    prison[column_name] = pd.to_numeric(prison[column_name], errors='coerce')
 
 # Columns to convert
 columns_to_convert = ['Cheating\n (Sec. 419,\n 420 IPC)',
@@ -28,7 +28,7 @@ columns_to_convert = ['Cheating\n (Sec. 419,\n 420 IPC)',
 
 # Convert the specified columns
 for column in columns_to_convert:
-    prison[column] = convert_to_numeric(column)
+    convert_to_numeric(column)
 
 # Display the updated dataset
 #st.write(prison)
