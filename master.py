@@ -38,16 +38,6 @@ for column in columns_to_convert:
 st.write("Shape of the DataFrame:", prison.shape)
 #st.write("Head of the DataFrame:", prison.head())
 st.write("Columns of the DataFrame:", prison.columns)
-# Display the data types of the columns
-prison['State'] = prison['State'].astype(str)
-prison['District'] = prison['District'].astype(str)
-
-# Serialize the DataFrame to Arrow table
-arrow_table = pa.Table.from_pandas(prison)
-
-# Display the Arrow table
-st.write(arrow_table)
-
 def main():
         st.write("Data Types:")
         st.write(prison.dtypes)
