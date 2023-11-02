@@ -11,6 +11,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 import plotly.express as px
 from IPython.core.display import HTML
+import pyarrow as pa
 
 prison = pd.read_csv(r'/workspaces/Research-paper/PRISON (1).csv', encoding='iso-8859-1')
 st.title('Women Centric Data Analysis')
@@ -38,6 +39,15 @@ st.write("Shape of the DataFrame:", prison.shape)
 #st.write("Head of the DataFrame:", prison.head())
 st.write("Columns of the DataFrame:", prison.columns)
 # Display the data types of the columns
+prison['State'] = prison['State'].astype(str)
+prison['District'] = prison['District'].astype(str)
+
+# Serialize the DataFrame to Arrow table
+arrow_table = pa.Table.from_pandas(prison)
+
+# Display the Arrow table
+st.write(arrow_table)
+
 def main():
         st.write("Data Types:")
         st.write(prison.dtypes)
