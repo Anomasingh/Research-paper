@@ -9,8 +9,10 @@ import matplotlib.ticker as mtick
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
+import plotly.express as px
+from IPython.core.display import HTML
 
-prison = pd.read_csv(r'/workspaces/Research-paper/PRISON.csv', encoding='iso-8859-1')
+prison = pd.read_csv(r'/workspaces/Research-paper/PRISON (1).csv', encoding='iso-8859-1')
 st.title('Women Centric Data Analysis')
 st.write('Head of the Dataset:')
 st.dataframe(prison.head(), height=200 , width=900)
@@ -121,29 +123,27 @@ def main():
         
         # Group by State and Year and find the maximum of all crime columns
         max_crimes = filtered_data.groupby(["State", "Year"])[[
-          "Murder (Sec.302 & 303 IPC)",
-            "Attempt To Commit Murder (Sec.307 IPC)",
-            "C.H. Not Amoun- ting To Murder (Sec.304 &308 IPC)",
-            "Rape (Sec.376 IPC)",
-            "Kidnapping & Abduction (Sec.363-369,371-373 IPC)",
-            "Dacoity (Sec.395\n to 398 IPC)",
-            "Prepara- tion & Assembly for Dacoity (Sec. 399 ‚\n 402 IPC)",
-            "Robbery\n (Sec. 392 ‚\n 394, 397 &\n 398 IPC)",
-            "Burglary\n (Sec. 449 ‚\n 452, 454,\n 455, 457 ‚\n 460 IPC)",
-            "Theft (Sec. 379 -382 IPC)",
-            "Riots\n (Sec. 143-\n 145, 147-\n 151, 153,\n 153A,\n 153B, 157,\n 158, 160\n IPC)",
-            "Criminal Breach of Trust (Sec. 406 -409 IPC)",
-            "Cheating\n (Sec. 419,\n 420 IPC)",
-            "Counter- Feiting (Sec. 231-254, 489A-\n 489D IPC)",
-            "Arson (Sec. 435,436,\n 438 IPC)",
-            "Hurt\n (Sec. 323-\n 333, 335-338\n IPC)",
-            "Dowry Death (Sec. 304B IPC)",
-            "Molestation\n (Sec. 354 IPC)",
-            "Cruelty by Husband & Relatives (Sec. 498A IPC)",
-            "Importa\n -tion of Girls (Sec.\n 366B IPC)",
-            "Causing Death By Negligence (Sec. 304A IPC)",
-            "Other IPC Crime",
-            "Total Cog. Crime Under IPC"
+        'Murder (Sec.302 & 303 IPC)',
+       'Attempt To Commit Murder (Sec.307 IPC)',
+       'C.H. Not Amoun- ting To Murder (Sec.304 &308 IPC)',
+       'Rape (Sec.376 IPC)',
+       'Kidnapping & Abduction (Sec.363-369,371-373 IPC)',
+       'Dacoity (Sec.395\n to 398 IPC)',
+       'Prepara- tion & Assembly for Dacoity (Sec. 399 \n 402 IPC)',
+       'Robbery\n (Sec. 392 \n 394, 397 &\n 398 IPC)',
+       'Burglary\n (Sec. 449 \n 452, 454,\n 455, 457 \n 460 IPC)',
+       'Theft (Sec. 379 -382 IPC)',
+       'Riots\n (Sec. 143-\n 145, 147-\n 151, 153,\n 153A,\n 153B, 157,\n 158, 160\n IPC)',
+       'Criminal Breach of Trust (Sec. 406 -409 IPC)',
+       'Cheating\n (Sec. 419,\n 420 IPC)',
+       'Counter- Feiting (Sec. 231-254, 489A-\n 489D IPC)',
+       'Arson (Sec. 435,436,\n 438 IPC)',
+       'Hurt\n (Sec. 323-\n 333, 335-338\n IPC)',
+       'Dowry Death (Sec. 304B IPC)', 'Molestation\n (Sec. 354 IPC)',
+       'Cruelty by Husband & Relatives (Sec. 498A IPC)',
+       'Importa\n -tion of Girls (Sec.\n 366B IPC)',
+       'Causing Death By Negligence (Sec. 304A IPC)', 'Other IPC Crime',
+       'Total Cog. Crime Under IPC'
         ]].max()
 
         # Display the maximum crimes data
@@ -159,10 +159,11 @@ def main():
     for column in prison.columns:
         if column not in ["State", "Year", "District","Attempt To Commit Murder (Sec.307 IPC)",
             "C.H. Not Amoun- ting To Murder (Sec.304 &308 IPC)",
+            'Kidnapping & Abduction (Sec.363-369,371-373 IPC)',
             "Dacoity (Sec.395\n to 398 IPC)",
-            "Prepara- tion & Assembly for Dacoity (Sec. 399  402 IPC)",
-            "Robbery (Sec. 392  394, 397 & 398 IPC)",
-            "Burglary (Sec. 449  452, 454, 455, 457  460 IPC)",
+            "Prepara- tion & Assembly for Dacoity (Sec. 399 \n 402 IPC)",
+            "Robbery\n (Sec. 392 \n 394, 397 &\n 398 IPC)",
+            "Burglary\n (Sec. 449 \n 452, 454,\n 455, 457 \n 460 IPC)",
             "Theft (Sec. 379 -382 IPC)",
             "Riots\n (Sec. 143-\n 145, 147-\n 151, 153,\n 153A,\n 153B, 157,\n 158, 160\n IPC)",
             "Criminal Breach of Trust (Sec. 406 -409 IPC)",
@@ -193,9 +194,9 @@ def main():
     st.write(murder_cases_by_year)
     
     # Total number of Kidnapping and Abduction Cases Registered by Year
-    st.header("Total Number of Kidnapping & Abduction (Sec.363-369,371-373 IPC) Cases Registered by Year")
-    kidnapping_and_abduction_cases_by_year = prison.groupby("Year")["Kidnapping & Abduction (Sec.363-369,371-373 IPC)"].sum()
-    st.write(kidnapping_and_abduction_cases_by_year)
+    #st.header("Total Number of Kidnapping & Abduction (Sec.363-369,371-373 IPC) Cases Registered by Year")
+    #kidnapping_and_abduction_cases_by_year = prison.groupby("Year")["Kidnapping & Abduction (Sec.363-369,371-373 IPC)"].sum()
+    #st.write(kidnapping_and_abduction_cases_by_year)
 
     # Total number of Girl Importation Cases Registered by Year
     st.header("Total Number of Girl Importation Cases Registered by Year")
@@ -228,9 +229,9 @@ def main():
     st.write(top_states_by_rape_cases)
     
     # Top 10 States with the Most Kidnapping & Abduction (Sec.363-369,371-373 IPC) Cases
-    st.header("Top 10 States with the Most Kidnapping & Abduction (Sec.363-369,371-373 IPC)")
-    top_states_by_kidnapping_and_abduction_cases = prison.groupby("State")["Kidnapping & Abduction (Sec.363-369,371-373 IPC)"].sum().nlargest(10)
-    st.write(top_states_by_kidnapping_and_abduction_cases)
+    #st.header("Top 10 States with the Most Kidnapping & Abduction (Sec.363-369,371-373 IPC)")
+    #top_states_by_kidnapping_and_abduction_cases = prison.groupby("State")["Kidnapping & Abduction (Sec.363-369,371-373 IPC)"].sum().nlargest(10)
+    #st.write(top_states_by_kidnapping_and_abduction_cases)
 
     # Top 10 States with the Most Importation of Girls (Sec.\n 366B IPC) Cases
     st.header("Top 10 States with the Most Importation of Girls (Sec.\n 366B IPC) Cases")
@@ -260,6 +261,193 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Define the columns you want to plot
+columns_to_plot = [
+    'Murder (Sec.302 & 303 IPC)',
+    'Importa\n -tion of Girls (Sec.\n 366B IPC)',
+    'Dowry Death (Sec. 304B IPC)',
+    'Rape (Sec.376 IPC)',
+    'Molestation\n (Sec. 354 IPC)',
+    'Cruelty by Husband & Relatives (Sec. 498A IPC)'
+]
+
+# Set up the Streamlit app
+st.title('Prison Data Analysis')
+
+# Loop through the columns and create a bar plot for each
+for column in columns_to_plot:
+    df = prison.groupby('Year')[column].mean().reset_index()
+    st.subheader(f'Average {column} by Year')
+    
+    # Create a bar plot using Seaborn
+    plt.figure(figsize=(25, 7))
+    ax = sns.barplot(x="Year", y=column, data=df)
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.pyplot()
+    
+# Define the columns you want to include in the grouped bar plot
+columns_to_plot = ['Year',
+    'Murder (Sec.302 & 303 IPC)',
+    'Importa\n -tion of Girls (Sec.\n 366B IPC)',
+    'Dowry Death (Sec. 304B IPC)',
+    'Rape (Sec.376 IPC)',
+    'Molestation\n (Sec. 354 IPC)',
+    'Cruelty by Husband & Relatives (Sec. 498A IPC)'
+]
+
+# Filter the DataFrame to include only the selected columns
+df = prison[columns_to_plot]
+
+# Set up the Streamlit app
+st.title('Year Vs Total Case Registered Against Women')
+st.write('Grouped Bar Plot')
+
+# Create a grouped bar plot
+plt.figure(figsize=(15, 10))
+ax = df.groupby(['Year']).sum().plot(kind='bar', width=0.7, figsize=(15, 10))
+plt.title("Year Vs Total Case Registered Against Women")
+st.pyplot(plt)
+
+columns_to_include = [
+    'Year',
+    'Murder (Sec.302 & 303 IPC)',
+    'Importa\n -tion of Girls (Sec.\n 366B IPC)',
+    'Dowry Death (Sec. 304B IPC)',
+    'Rape (Sec.376 IPC)',
+    'Molestation\n (Sec. 354 IPC)',
+    'Cruelty by Husband & Relatives (Sec. 498A IPC)'
+]
+
+filtered_data = prison[columns_to_include]
+
+# Set up the Streamlit app
+st.title('Correlation Heatmap')
+
+# Calculate the correlation matrix
+corrMatrix = filtered_data.corr()
+
+# Create a heatmap
+plt.figure(figsize=(10, 10))
+sns.heatmap(corrMatrix, annot=True, cmap="coolwarm", square=True)
+st.pyplot(plt)
+
+crime_columns = [
+    'Murder (Sec.302 & 303 IPC)',
+    'Importa\n -tion of Girls (Sec.\n 366B IPC)',
+    'Dowry Death (Sec. 304B IPC)',
+    'Rape (Sec.376 IPC)',
+    'Molestation\n (Sec. 354 IPC)',
+    'Cruelty by Husband & Relatives (Sec. 498A IPC)'
+]
+
+# Set up the Streamlit app
+st.title('Total Number of Incidents by Crime Category in Each State')
+st.write('Colorful and Attractive Bar Plots for Each Crime Category')
+
+# Create a separate bar plot for each crime category with enhanced styling
+for column in crime_columns:
+    plt.figure(figsize=(16, 8))
+    abDf = prison.groupby("State")[column].sum()
+    abDf = abDf.reset_index()
+    abDf = abDf.sort_values(by=[column], ascending=False)
+
+    # Customize plot style with the "viridis" color palette and assign hue to "State"
+    viridis_colors = sns.color_palette("RdYlBu", len(abDf['State']))
+    
+    # Create the bar plot
+    ax = sns.barplot(x=abDf['State'], y=abDf[column], palette=viridis_colors, hue=abDf['State'], dodge=False)
+    
+
+    
+    # Add labels and title
+    ax.set(title=f'Total {column} in Each State')
+    plt.xticks(rotation=90)
+    plt.xlabel('State', fontsize=12)
+    plt.ylabel('Total Incidents', fontsize=12)
+
+    st.pyplot()
+
+# Optionally, you can add space between the plots
+st.text('')  # Add space between plots
+
+# Sort the DataFrame by 'Total Cog. Crime Under IPC'
+prison.sort_values('Total Cog. Crime Under IPC', inplace=True)
+
+# Create a Streamlit app
+st.title('Total Cog. Crime Under IPC by State')
+st.write('Bar Plot')
+
+# Create a bar plot using Plotly Express
+fig = px.bar(prison[20:], x='State', y='Total Cog. Crime Under IPC',
+             color='Total Cog. Crime Under IPC',
+             labels={'x': 'States', 'y': 'Count'},
+             title='Total Cog. Crime Under IPC',
+             color_continuous_scale='blugrn')
+st.plotly_chart(fig)
+
+# Data for the pie chart
+labels = ['Rape (Sec.376 IPC)', 'Dowry Death (Sec. 304B IPC)', 'Molestation\n (Sec. 354 IPC)', 'Importa\n -tion of Girls (Sec.\n 366B IPC)', 'Cruelty by Husband & Relatives (Sec. 498A IPC)']
+sizes = [49.3178915898, 13.748013217, 32.4349116219, 0.366569788, 4.1326137833]
+
+# Define the HTML code for the iframe
+iframe_code = """
+<iframe src='https://flo.uri.sh/visualisation/14897434/embed' title='Interactive or visual content'
+class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
+sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
+</iframe>
+<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14897434/?utm_source=embed&utm_campaign=visualisation/14897434'
+target='_top' style='text-decoration:none!important'>
+<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
+</a>
+</div>
+"""
+
+
+# Create a Streamlit app
+st.title('Embedded Flourish Visualization')
+
+# Embed the iframe code
+st.markdown(iframe_code, unsafe_allow_html=True)
+
+# Define the HTML code for the iframe
+iframe_code = """
+<iframe src='https://flo.uri.sh/visualisation/14898687/embed' title='Interactive or visual content'
+class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
+sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
+</iframe>
+<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898687/?utm_source=embed&utm_campaign=visualisation/14898687'
+target='_top' style='text-decoration:none!important'>
+<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
+</a>
+</div>
+"""
+
+# Embed the iframe code
+st.markdown(iframe_code, unsafe_allow_html=True)
+
+
+iframe_code = """
+<iframe src='https://flo.uri.sh/visualisation/14898817/embed' title='Interactive or visual content'
+class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
+sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
+</iframe>
+<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898817/?utm_source=embed&utm_campaign=visualisation/14898817'
+target='_top' style='text-decoration:none!important'>
+<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
+</a>
+</div>
+"""
+
+# Create a Streamlit app
+st.title('Embedded Flourish Visualization')
+st.write('Below is an embedded Flourish visualization.')
+
+# Embed the iframe code
+st.markdown(iframe_code, unsafe_allow_html=True)
 
 
 
