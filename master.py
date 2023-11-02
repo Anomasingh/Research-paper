@@ -262,6 +262,117 @@ def main():
 if __name__ == "__main__":
     main()
 
+# Define the HTML code for the iframe
+iframe_code = """
+<iframe src='https://flo.uri.sh/visualisation/14897434/embed' title='Interactive or visual content'
+class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
+sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
+</iframe>
+<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14897434/?utm_source=embed&utm_campaign=visualisation/14897434'
+target='_top' style='text-decoration:none!important'>
+<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
+</a>
+</div>
+"""
+
+
+# Create a Streamlit app
+st.title('Embedded Flourish Visualization')
+
+# Embed the iframe code
+st.markdown(iframe_code, unsafe_allow_html=True)
+
+# Define the HTML code for the iframe
+iframe_code = """
+<iframe src='https://flo.uri.sh/visualisation/14898687/embed' title='Interactive or visual content'
+class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
+sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
+</iframe>
+<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898687/?utm_source=embed&utm_campaign=visualisation/14898687'
+target='_top' style='text-decoration:none!important'>
+<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
+</a>
+</div>
+"""
+
+# Embed the iframe code
+st.markdown(iframe_code, unsafe_allow_html=True)
+
+
+iframe_code = """
+<iframe src='https://flo.uri.sh/visualisation/14898817/embed' title='Interactive or visual content'
+class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
+sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
+</iframe>
+<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898817/?utm_source=embed&utm_campaign=visualisation/14898817'
+target='_top' style='text-decoration:none!important'>
+<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
+</a>
+</div>
+"""
+# Embed the iframe code
+st.markdown(iframe_code, unsafe_allow_html=True)
+
+iframe_html = """
+<iframe src='https://flo.uri.sh/visualisation/14898855/embed'
+        title='Interactive or visual content'
+        class='flourish-embed-iframe'
+        frameborder='0'
+        scrolling='no'
+        style='width:100%;height:600px;'
+        sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
+</iframe>
+<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+    <a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898855/?utm_source=embed&utm_campaign=visualisation/14898855' target='_top' style='text-decoration:none!important'>
+        <img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'>
+    </a>
+</div>
+"""
+
+# Display the Flourish visualization in your Streamlit app
+st.markdown(iframe_code, unsafe_allow_html=True)
+
+iframe_html = """
+<iframe src='https://flo.uri.sh/visualisation/14898913/embed'
+        title='Interactive or visual content'
+        class='flourish-embed-iframe'
+        frameborder='0'
+        scrolling='no'
+        style='width:100%;height:600px;'
+        sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
+</iframe>
+<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+    <a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898913/?utm_source=embed&utm_campaign=visualisation/14898913' target='_top' style='text-decoration:none!important'>
+        <img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'>
+    </a>
+</div>
+"""
+
+# Display the Flourish visualization in your Streamlit app using st.write()
+st.write(iframe_html, unsafe_allow_html=True)
+
+iframe_code = """
+<iframe src='https://flo.uri.sh/visualisation/14898969/embed'
+        title='Interactive or visual content'
+        class='flourish-embed-iframe'
+        frameborder='0'
+        scrolling='no'
+        style='width:100%;height:600px;'
+        sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
+</iframe>
+<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+    <a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898969/?utm_source=embed&utm_campaign=visualisation/14898969' target='_top' style='text-decoration:none!important'>
+        <img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'>
+    </a>
+</div>
+"""
+
+# Display the Flourish visualization in your Streamlit app using st.markdown
+st.markdown(iframe_code, unsafe_allow_html=True)
+
 # Define the columns you want to plot
 columns_to_plot = [
     'Murder (Sec.302 & 303 IPC)',
@@ -376,7 +487,6 @@ prison.sort_values('Total Cog. Crime Under IPC', inplace=True)
 
 # Create a Streamlit app
 st.title('Total Cog. Crime Under IPC by State')
-st.write('Bar Plot')
 
 # Create a bar plot using Plotly Express
 fig = px.bar(prison[20:], x='State', y='Total Cog. Crime Under IPC',
@@ -390,64 +500,17 @@ st.plotly_chart(fig)
 labels = ['Rape (Sec.376 IPC)', 'Dowry Death (Sec. 304B IPC)', 'Molestation\n (Sec. 354 IPC)', 'Importa\n -tion of Girls (Sec.\n 366B IPC)', 'Cruelty by Husband & Relatives (Sec. 498A IPC)']
 sizes = [49.3178915898, 13.748013217, 32.4349116219, 0.366569788, 4.1326137833]
 
-# Define the HTML code for the iframe
-iframe_code = """
-<iframe src='https://flo.uri.sh/visualisation/14897434/embed' title='Interactive or visual content'
-class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
-sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
-</iframe>
-<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
-<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14897434/?utm_source=embed&utm_campaign=visualisation/14897434'
-target='_top' style='text-decoration:none!important'>
-<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
-</a>
-</div>
-"""
 
 
-# Create a Streamlit app
-st.title('Embedded Flourish Visualization')
-
-# Embed the iframe code
-st.markdown(iframe_code, unsafe_allow_html=True)
-
-# Define the HTML code for the iframe
-iframe_code = """
-<iframe src='https://flo.uri.sh/visualisation/14898687/embed' title='Interactive or visual content'
-class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
-sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
-</iframe>
-<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
-<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898687/?utm_source=embed&utm_campaign=visualisation/14898687'
-target='_top' style='text-decoration:none!important'>
-<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
-</a>
-</div>
-"""
-
-# Embed the iframe code
-st.markdown(iframe_code, unsafe_allow_html=True)
 
 
-iframe_code = """
-<iframe src='https://flo.uri.sh/visualisation/14898817/embed' title='Interactive or visual content'
-class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
-sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
-</iframe>
-<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
-<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898817/?utm_source=embed&utm_campaign=visualisation/14898817'
-target='_top' style='text-decoration:none!important'>
-<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
-</a>
-</div>
-"""
 
-# Create a Streamlit app
-st.title('Embedded Flourish Visualization')
-st.write('Below is an embedded Flourish visualization.')
 
-# Embed the iframe code
-st.markdown(iframe_code, unsafe_allow_html=True)
+
+
+
+
+
 
 
 
