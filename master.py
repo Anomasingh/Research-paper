@@ -157,7 +157,7 @@ def main():
     st.title("Rows with Peak Crimes in Each Crime Category")
 
     for column in prison.columns:
-        if column not in ["State", "Year", "District","Attempt To Commit Murder (Sec.307 IPC)",
+        if column not in ["State", "Year", "District","Murder (Sec.302 & 303 IPC)","Attempt To Commit Murder (Sec.307 IPC)",
             "C.H. Not Amoun- ting To Murder (Sec.304 &308 IPC)",
             'Kidnapping & Abduction (Sec.363-369,371-373 IPC)',
             "Dacoity (Sec.395\n to 398 IPC)",
@@ -189,9 +189,9 @@ def main():
     st.title("Crime Statistics by Year and Top 10 States")
 
     # Total number of Murder Cases Registered by Year
-    st.header("Total Number of Murder (Sec.302 & 303 IPC) Cases Registered by Year")
-    murder_cases_by_year = prison.groupby("Year")["Murder (Sec.302 & 303 IPC)"].sum()
-    st.write(murder_cases_by_year)
+    #st.header("Total Number of Murder (Sec.302 & 303 IPC) Cases Registered by Year")
+    #murder_cases_by_year = prison.groupby("Year")["Murder (Sec.302 & 303 IPC)"].sum()
+    #st.write(murder_cases_by_year)
     
     # Total number of Kidnapping and Abduction Cases Registered by Year
     #st.header("Total Number of Kidnapping & Abduction (Sec.363-369,371-373 IPC) Cases Registered by Year")
@@ -261,28 +261,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Define the HTML code for the iframe
-iframe_code = """
-<iframe src='https://flo.uri.sh/visualisation/14897434/embed' title='Interactive or visual content'
-class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
-sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
-</iframe>
-<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
-<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14897434/?utm_source=embed&utm_campaign=visualisation/14897434'
-target='_top' style='text-decoration:none!important'>
-<img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> 
-</a>
-</div>
-"""
-
-
-# Create a Streamlit app
-st.title('Embedded Flourish Visualization')
-
-# Embed the iframe code
-st.markdown(iframe_code, unsafe_allow_html=True)
-
 # Define the HTML code for the iframe
 iframe_code = """
 <iframe src='https://flo.uri.sh/visualisation/14898687/embed' title='Interactive or visual content'
@@ -375,7 +353,6 @@ st.markdown(iframe_code, unsafe_allow_html=True)
 
 # Define the columns you want to plot
 columns_to_plot = [
-    'Murder (Sec.302 & 303 IPC)',
     'Importa\n -tion of Girls (Sec.\n 366B IPC)',
     'Dowry Death (Sec. 304B IPC)',
     'Rape (Sec.376 IPC)',
@@ -399,7 +376,6 @@ for column in columns_to_plot:
     
 # Define the columns you want to include in the grouped bar plot
 columns_to_plot = ['Year',
-    'Murder (Sec.302 & 303 IPC)',
     'Importa\n -tion of Girls (Sec.\n 366B IPC)',
     'Dowry Death (Sec. 304B IPC)',
     'Rape (Sec.376 IPC)',
@@ -422,7 +398,6 @@ st.pyplot(plt)
 
 columns_to_include = [
     'Year',
-    'Murder (Sec.302 & 303 IPC)',
     'Importa\n -tion of Girls (Sec.\n 366B IPC)',
     'Dowry Death (Sec. 304B IPC)',
     'Rape (Sec.376 IPC)',
@@ -444,7 +419,6 @@ sns.heatmap(corrMatrix, annot=True, cmap="coolwarm", square=True)
 st.pyplot(plt)
 
 crime_columns = [
-    'Murder (Sec.302 & 303 IPC)',
     'Importa\n -tion of Girls (Sec.\n 366B IPC)',
     'Dowry Death (Sec. 304B IPC)',
     'Rape (Sec.376 IPC)',
@@ -454,7 +428,6 @@ crime_columns = [
 
 # Set up the Streamlit app
 st.title('Total Number of Incidents by Crime Category in Each State')
-st.write('Colorful and Attractive Bar Plots for Each Crime Category')
 
 # Create a separate bar plot for each crime category with enhanced styling
 for column in crime_columns:
