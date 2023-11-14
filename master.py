@@ -13,7 +13,7 @@ import plotly.express as px
 from IPython.core.display import HTML
 import pyarrow as pa
 
-prison = pd.read_csv(r'/workspaces/Research-paper/PRISON (1).csv', encoding='iso-8859-1')
+prison = pd.read_csv(r'PRISON (1).csv', encoding='iso-8859-1')
 st.title('Women Centric Data Analysis')
 st.write('Head of the Dataset:')
 st.dataframe(prison.head(), height=200 , width=900)
