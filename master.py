@@ -261,7 +261,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-# Define the HTML code for the iframe
+# 
 iframe_code = """
 <iframe src='https://flo.uri.sh/visualisation/14898687/embed' title='Interactive or visual content'
 class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;'
@@ -294,24 +294,27 @@ target='_top' style='text-decoration:none!important'>
 # Embed the iframe code
 st.markdown(iframe_code, unsafe_allow_html=True)
 
-iframe_html = """
-<iframe src='https://flo.uri.sh/visualisation/14898855/embed'
-        title='Interactive or visual content'
-        class='flourish-embed-iframe'
-        frameborder='0'
-        scrolling='no'
-        style='width:100%;height:600px;'
-        sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>
-</iframe>
-<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
-    <a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898855/?utm_source=embed&utm_campaign=visualisation/14898855' target='_top' style='text-decoration:none!important'>
-        <img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'>
-    </a>
-</div>
-"""
+st.markdown(
+    "<iframe src='https://flo.uri.sh/visualisation/14898855/embed' "
+    "title='Interactive or visual content' "
+    "class='flourish-embed-iframe' frameborder='0' scrolling='no' "
+    "style='width:100%;height:600px;' "
+    "sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'>"
+    "</iframe>",
+    unsafe_allow_html=True
+)
 
-# Display the Flourish visualization in your Streamlit app
-st.markdown(iframe_code, unsafe_allow_html=True)
+# Flourish credit
+st.markdown(
+    "<div style='width:100%!;margin-top:4px!important;text-align:right!important;'>"
+    "<a class='flourish-credit' href='https://public.flourish.studio/visualisation/14898855/?utm_source=embed&utm_campaign=visualisation/14898855' "
+    "target='_top' style='text-decoration:none!important'>"
+    "<img alt='Made with Flourish' "
+    "src='https://public.flourish.studio/resources/made_with_flourish.svg' "
+    "style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> "
+    "</a></div>",
+    unsafe_allow_html=True
+)
 
 iframe_html = """
 <iframe src='https://flo.uri.sh/visualisation/14898913/embed'
