@@ -3,4 +3,5 @@ This research paper delves into gender-based violence in India spanning the year
 
 By delving into a dataset of approximately 10,000 rows documenting crimes against women, such as rape, molestation, dowry deaths, girl trafficking, and cruelty by relatives, this study employs advanced data analytics to address critical questions.
 
-## Tools and technology used ## : google colab , python, EDA, streamlit , github , Kaggle ,  Visual Studio Code
+## Tools and technology used ## 
+google colab , python, EDA, streamlit , github , Kaggle ,  Visual Studio Code
